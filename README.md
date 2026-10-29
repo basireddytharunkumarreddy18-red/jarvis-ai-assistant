@@ -2,7 +2,13 @@
 
 > ⚠️ **macOS ONLY:** This project relies heavily on AppleScript (`osascript`), macOS native Text-to-Speech (`say`), and Mac-specific permission models (Accessibility/Input Monitoring). It **will not** run on Windows or Linux.
 
-JARVIS is a custom, hands-free AI voice assistant. It uses the DeepSeek API (LLM) with **Function Calling** to control your Mac, play media, and answer questions using natural voice commands.
+JARVIS is a custom, hands-free AI voice assistant designed to control your Mac. It uses **Function Calling** to let the AI decide which tools to use (like opening apps, playing YouTube, or changing volume) based on your natural voice commands.
+
+## 🧠 AI Model: DeepSeek Only
+This project is specifically configured to use the **DeepSeek API**. 
+- It uses the model `deepseek-flash`.
+- It routes requests to `https://api.deepseek.com`.
+*(Note: You can change it to use OpenAI by editing the `base_url` and `MODEL` variables in `jarvis.py`, but by default, it requires a DeepSeek API key).*
 
 ## 🔑 API Key Requirement (BYOK - Bring Your Own Key)
 **This repository does NOT contain an API key.** To run this project, you must generate your own DeepSeek API key. 
@@ -20,7 +26,7 @@ JARVIS is a custom, hands-free AI voice assistant. It uses the DeepSeek API (LLM
 
 ## 🛠️ Tech Stack
 - **Language:** Python 3.9+
-- **AI/LLM:** OpenAI Python SDK (DeepSeek API)
+- **AI/LLM:** OpenAI Python SDK (pointed to DeepSeek API)
 - **Audio:** `sounddevice`, `numpy`, `SpeechRecognition`
 - **System Automation:** AppleScript (`osascript`), `subprocess`
 - **Keyboard Hooking:** `pynput`
@@ -29,5 +35,5 @@ JARVIS is a custom, hands-free AI voice assistant. It uses the DeepSeek API (LLM
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/jarvis-ai-assistant.git
+   git clone https://github.com/basireddytharunkumarreddy18-red/jarvis-ai-assistant.git
    cd jarvis-ai-assistant
